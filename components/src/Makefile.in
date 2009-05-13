@@ -1,0 +1,44 @@
+DEPTH   = ../../../..
+topsrcdir = @top_srcdir@
+srcdir    = @srcdir@
+VPATH   = @srcdir@
+
+include $(DEPTH)/config/autoconf.mk
+
+IS_COMPONENT = 1
+MODULE = ubiquity
+LIBRARY_NAME = ubiquity
+USE_STATIC_LIBS = 1
+#FORCE_SHARED_LIB = 1
+#FORCE_USE_PIC = 1
+
+XPI_NAME = ubiquity
+
+REQUIRES	= \
+		  $(NULL)
+
+CPPSRCS = ubiquitymodule.cpp \
+          $(NULL)
+
+ifeq ($(OS_ARCH),Darwin)
+CMMSRCS = nsUbiquityDesktopIntegration.mm \
+          $(NULL)
+endif
+
+include $(topsrcdir)/config/rules.mk
+
+EXTRA_DSO_LDOPTS += \
+    $(XPCOM_GLUE_LDOPTS) \
+    $(NSPR_LIBS) \
+    $(NULL)
+
+ifeq ($(OS_ARCH),Darwin)
+LDFLAGS += \
+        -framework Carbon \
+        -framework AppKit \
+        -framework ApplicationServices \
+        $(NULL)
+endif
+
+clobber::
+	rm -f $(DIST)/lib/$(LIBRARY_NAME).lib

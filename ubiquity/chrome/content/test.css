@@ -1,0 +1,24 @@
+#test-options {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 10px;
+  margin: 10px 0px 20px 0px;
+}
+
+#test-options label {
+  margin: 0px 10px;
+}
+
+#test-output .successful { }
+
+#test-output .skipped {
+  color: #0000FF;
+}
+
+#test-output .failed {
+  color: #FF0000;
+}
+
+#test-output .summary {
+  margin-top: 20px;
+}

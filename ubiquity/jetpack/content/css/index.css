@@ -1,0 +1,53 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 9pt;
+}
+
+.jetpack {
+    padding-left: 1em;
+}
+
+.buttony {
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+
+span.buttony:hover {
+    background-color: #aaaaaa;
+}
+
+span.buttony:active {
+    background-color: #666666;
+}
+
+a {
+    color: black;
+}
+
+.warning {
+    display: none;
+    background-color: orange;
+    padding: 0.5em;
+}
+
+.warning .buttony {
+    opacity: 0.6;
+}
+
+table {
+    font: inherit;
+}
+
+td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.code {
+    font-family: monaco, sans-serif;
+    white-space: pre-wrap;
+}
+
+.sample {
+    padding-left: 1em;
+}

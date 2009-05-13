@@ -1,0 +1,306 @@
+/*
+ * CSS inspired by Hemingway: http://warpspire.com/hemingway
+ */
+
+body{
+	background: #FFF;
+	font-size:13px;
+	font-family: "Helvetica", Verdana, Arial, sans-serif;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-top: 0px;
+	color: #000;
+}
+
+#nav-container{
+  margin-left: -40px;
+  float: left;  
+}
+
+li {
+    padding: 3px;
+}
+
+#nav ul{}
+
+#nav li{
+  background-color:#aaa;
+  border-left:1px solid #CCCCCC;
+
+  margin:0px;
+  padding:0pt;
+    
+  float:left;
+  height:45px;
+  text-align:left;  
+  list-style-image:none;
+  list-style-position:outside;
+  list-style-type:none;
+  width: 149px;
+}
+
+#nav a{
+  margin: 5px;
+  color: white;
+  display: block;
+  width: auto;
+  height: 100%;
+  text-decoration: none;  
+}
+
+#nav li:hover{
+  background-color: #66bb00;
+}
+
+.col-two{
+  width: 225px;
+  float: left;
+}
+
+.col-three{
+  width: 315px;
+  margin-right: 20px;
+  float: left;
+}
+
+.col-five{
+  width: 480px;
+  margin-right: 20px;
+  float: left;
+}
+
+.col-four{
+  width: 395px;
+  float: left;
+}
+
+.light{
+  color: #ccc;
+  font-style: italic;
+}
+
+.head{
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  text-align: left;
+  color: grey;
+  font-variant: small-caps;
+  font-size: 14pt;
+  margin-top: 10px;
+}
+
+.left{
+  text-align: left;
+  padding-left: 10px;
+}
+
+.large{
+  font-size: 36pt;
+}
+
+h1{
+  color: #E21E26;
+  font-variant: small-caps;
+}
+
+h4{
+  font-variant: small-caps;
+}
+
+h2{
+  border-top: 1px solid black;
+  font-variant: small-caps;
+  color: black;
+  margin-top: 100px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+h2.top{
+  margin: 0px;
+}
+
+em{
+  color: #66bb00;
+  font-style: normal;
+}
+
+#sort-container {
+	padding: 10px;
+}
+
+.command, #skin-list .command{
+  margin: 15px;
+  margin-bottom: 20px;
+}
+
+.command .name, #skin-list .command .name{
+  font-size: 15pt;
+}
+.command .name{
+  cursor: pointer;
+}
+
+.command .homepage, #skin-list .command .homepage{
+}
+
+.command .author, #skin-list .command .author{
+  font-size: 90%;
+}
+
+.command .description, #skin-list .command .description{
+  display: inline;
+  font-size: 12pt;
+  margin-left: 10px;
+  color:#BFBFBF;
+}
+.command .synonyms{
+  color: black;
+}
+
+#skin-list .current-skin{
+  color: blue;
+  font-weight: 800;
+}
+
+.command .help{
+  margin-top: 5px;
+  color: #777;
+}
+
+
+
+#preview-image{
+  border: 3px solid #000;
+  padding: 2px;
+}
+
+a, a:visited {
+  color: #CC6600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color:#FF0000;
+}
+
+.alert {
+  color:#FFFFFF;
+  background:#FF0000;
+}
+
+.alert a {
+  color:#FFFFFF;
+  text-decoration: underline;
+}
+
+.feed-action:visited, .feed-action, .feed-action:hover {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+.feed-updated {
+  font-size: 8pt;
+  color: #009900;
+}
+
+.notification {
+  color: blue;
+  font-variant: small-caps;
+  font-size: 15pt;
+}
+
+div#editor-div iframe {border: 1px black solid !important; clear: both; margin: 1em auto;}
+
+/* Using FreakCERS's CSS from http://users.skumleren.net/cers/examples/ubiquitybutton.html*/
+
+ul.button-list {
+  list-style: none;
+}
+
+ul.button-list li{
+  padding: 0px;
+}
+
+ul a.button {
+  border: 1px #aaa solid; 
+  -moz-border-radius: 12px; 
+  background: #ddd url('chrome://ubiquity/skin/buttons/grad.png') 0 0 repeat-x; 
+  display: block; 
+  float: left; 
+  padding: 0 2em;
+  height: 22px; 
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 15px;
+  line-height: 22px;
+  outline: none;
+}
+ul a:active.button {
+  background-color: #cdcdcd; 
+  background-position: 0 -22px;
+}
+
+td.command-feed-name {
+  font-size: 18px;
+}
+
+ul#command-feed-graveyard {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul#command-feed-graveyard li {
+  padding-bottom: .5em;
+}
+
+ul#command-feed-graveyard ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+ul#command-feed-graveyard ul:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+ul#command-feed-graveyard ul li {
+  float: left;
+  white-space: nowrap;
+  padding-bottom: 0;
+}
+
+ul#command-feed-graveyard ul li:after {
+  content: ",";
+}
+
+ul#command-feed-graveyard ul li:last-child:after {
+  content: "";
+}
+
+th {
+  font-variant: small-caps;
+  font-size: 18pt;
+}
+
+td.topcell {
+  border-top: 1px solid black;
+}
+
+.ubiq-tutorial {
+  border-style:solid;
+  border-color:green;
+  padding: 2em;
+  font-size: 150%;
+}

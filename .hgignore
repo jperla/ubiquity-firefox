@@ -1,0 +1,6 @@
+syntax: glob
+*.orig
+*.xpi
+*.pyc
+*~
+.gitignore

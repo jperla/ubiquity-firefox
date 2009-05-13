@@ -1,0 +1,21 @@
+{
+anaphora: ["これ", "それ", "あれ"],
+roles: [
+  {role: 'object', delimiter: 'を'},
+  {role: 'goal', delimiter: 'に'},
+  {role: 'source', delimiter: 'から'},
+  {role: 'position', delimiter: 'に'},
+  {role: 'position', delimiter: 'で'},
+  {role: 'instrument', delimiter: 'で'},
+  {role: 'alias', delimiter: 'として'},
+  
+  // 「の」は何でもOK
+  {role: 'goal', delimiter: 'の'},
+  {role: 'source', delimiter: 'の'},
+  {role: 'time', delimiter: 'の'},
+  {role: 'object', delimiter: 'の'}
+],
+examples: ['くつしたをgooでかって',
+  '1pmの会議をcalに追加',
+  'tokからbostonに']
+}

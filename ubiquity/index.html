@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" media="all"
+        href="scripts/docs/docs.css" />
+  <title>Ubiquity Code Documentation</title>
+</head>
+<body>
+<div id="content">
+<div id="overview" class="documentation" style="display: none;">
+  <h1>Ubiquity Code Documentation</h1>
+  <p><b>Overview</b></p>
+  <p><strong>We need your help!</strong>
+  Contribute by documenting more of the code, and keeping it
+  up-to-date.</p>
+  <p>Here is what we've got for documentation so far.</p>
+  <ul>
+    <li><a class="intra-wiki"
+           href="#modules/utils.js">Utils</a></li>
+    <li><a class="intra-wiki"
+           href="#feed-parts/header/cmdutils.js">CmdUtils</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/eventhub.js">EventHub</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/webjsm.js">WebJsModule</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/feedmanager.js">FeedManager</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/annotation_memory.js">AnnotationService</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/msgservice.js">Message Services</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/locked_down_feed_plugin.js">Locked-Down Feed
+           Plugin</a></li>
+    <li><a class="intra-wiki"
+           href="#modules/parser/new/parser.js">Parser 2</a></li>
+  </ul>
+  <p>We also have some of our standard feeds documented:</p>
+  <ul>
+    <li><a href="standard-feeds/core-developer-commands.html">Core
+    Developer Commands</a></li>
+  </ul>
+</div>
+</div>
+</body>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/wikicreole.js"></script>
+<script src="scripts/docs/docs.js"></script>
+<script>
+  var XUL_PLANET_URL_TEMPLATE = "http://www.xulplanet.com/references/" +
+                                "xpcomref/ifaces/%QUERY%.html";
+  var MDC_URL_TEMPLATE = "https://developer.mozilla.org/en/N%QUERY%";
+
+  var INTRA_DOC_LINKS = {
+    FeedManager: "modules/feedmanager.js",
+    Feed: "modules/feedmanager.js",
+    WebJsModule: "modules/webjsm.js",
+    EventHub: "modules/eventhub.js",
+    AnnotationService: "modules/annotation_memory.js",
+    MessageService: "modules/msgservice.js",
+    LockedDownFeedPlugin: "modules/locked_down_feed_plugin.js"
+  }
+
+  App.processors.push(
+    function(documentation) {
+      $(documentation).find("tt").each(
+        function() {
+          var text = $(this).text();
+
+          if (text.indexOf("nsI") == 0) {
+            App.addMenuItem(this, "View MDC entry",
+                            MDC_URL_TEMPLATE.replace("%QUERY%",
+                                                     text.slice(1)));
+            App.addMenuItem(this, "View XULPlanet entry",
+                            XUL_PLANET_URL_TEMPLATE.replace("%QUERY%",
+                                                            text));
+          } else {
+            if (text in INTRA_DOC_LINKS) {
+              var href = "#" + INTRA_DOC_LINKS[text];
+              if (window.location.hash != href)
+                $(this).wrap('<a class="intra-wiki" href="' + href +
+                             '"></a>');
+            }
+          }
+        });
+    });
+</script>
+</html>

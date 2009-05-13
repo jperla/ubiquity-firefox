@@ -1,0 +1,64 @@
+<html>
+<head>
+  <base href="chrome://jetpack/content/"/>
+  <base target="_blank"/>
+  <link rel="stylesheet" type="text/css" media="all"
+        href="css/index.css" />
+  <title>I am Jetpack.</title>
+</head>
+<body>
+<h1>I am Jetpack.</h1>
+<p>If you want to create a Jetpack feed, use the <a
+href="chrome://ubiquity/content/editor.html">Ubiquity Command
+Editor</a> and set the feed type to "Jetpack"; to effect your changes,
+just reload any webpage or activate and then dismiss the Ubiquity
+command prompt&mdash;no saving is necessary.</p>
+<p>Here's a <span class="buttony" id="display-sample">sample Jetpack
+feed</span> to get you started. We'll have a real tutorial up soon.</p>
+<div id="sample-code" class="sample code"
+  style="display: none;">addStatusBarPanel({
+  html: "&lt;p&gt;kill flash&lt;/p&gt;",
+  onLoad: function(panel) {
+    var button = $(panel).find("p");
+    button.css({cursor: "pointer", fontFamily: "sans-serif"});
+    button.click(function() {
+      var doc = $(Application.activeWindow.activeTab.document);
+      doc.find("embed[type=application\\/x-shockwave-flash]").slideUp();
+    });
+  }});
+</div>
+<p>If you want to hack on the Jetpack platform itself, the vast
+majority of it is contained in the source code for this page. Just
+make local changes to the file or one of the scripts it refers to and
+reload this page.</p>
+<h2>Debugging Information</h2>
+<p>These are the Jetpacks that are currently installed.</p>
+<div id="jetpacks"></div>
+<p>Extension page weak references:</p>
+<div id="extension-weakrefs"></div>
+<p>
+  <span class="buttony" id="force-gc">force garbage collection</span>
+  <span class="buttony" id="run-tests">run test suite</span>
+</p>
+<p>Reloading this page will reload Jetpack.</p>
+<p id="firebug-not-found" class="warning">You either don't have
+Firebug installed, or you don't have it enabled for this page, so all
+logging messages will appear in the <span class="buttony"
+id="js-error-console">JS Error Console</span>. If you <a
+href="http://www.getfirebug.com">get Firebug</a> and enable it for
+this page, and then reload this page, all logging messages will be
+logged to the Firebug Console, where it's much easier to debug
+problems and inspect live objects.</p>
+<!-- Load scripts, etc. for the extension here. -->
+<script src="js/init-extension.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/log.js"></script>
+<script src="js/observe.js"></script>
+<script src="js/status-bar-panel.js"></script>
+<script src="js/jetpack-library.js"></script>
+<script src="js/jetpack.js"></script>
+<script src="js/test.js"></script>
+<script src="js/tests/test_log.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

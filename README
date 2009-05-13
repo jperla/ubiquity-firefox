@@ -1,0 +1,54 @@
+Installing Ubiquity
+-------------------
+
+To install Ubiquity for development purposes to your default Firefox
+profile, just enter the root directory of your Ubiquity source code
+checkout and run:
+
+  python manage.py install
+
+If you have a separate profile that you'd prefer to install the
+extension under, such as 'testing', you can add that as an optional
+parameter:
+
+  python manage.py install testing
+
+Using Ubiquity
+--------------
+
+Once Ubiquity has been installed, you should be able to start up
+Firefox and press Ctrl+Space or Alt+Space (depending on your OS).  A
+command entry window should pop up, which--for the time being--is the
+primary way through which Ubiquity commands are entered. Now type
+'help' and press enter.  The page that shows up should guide you from
+there.
+
+Uninstalling Ubiquity
+---------------------
+
+Just run "python manage.py uninstall", optionally specifying a profile
+name/directory if necessary.  Alternatively, you can also uninstall
+the extension through the normal Firefox addon management UI.
+
+Building an XPI
+---------------
+
+To build an XPI for Ubiquity, just run:
+
+  python manage.py build-xpi
+
+This will create an XPI with the name "ubiquity-<version>.xpi", where
+"<version>" is taken from the contents of the "em:version" element in the
+"ubiquity/install.rdf" file.
+
+Test Suite
+----------
+
+Once the extension is installed, the Ubiquity test suite can be run at:
+
+  chrome://ubiquity/content/test.html
+
+Alternatively, the suite can be run from the command-line with:
+
+  python manage.py test
+ 
